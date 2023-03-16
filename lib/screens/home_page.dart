@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:training_app/assets/colors.dart';
-import 'package:training_app/widgets/area_of_focus.dart';
-import 'package:training_app/widgets/boasting_figure_card.dart';
-import 'package:training_app/widgets/homepage_subtitle.dart';
-import 'package:training_app/widgets/homepage_title.dart';
-
-import '../widgets/next_workout_card.dart';
+import 'package:training_app/widgets/homePage/area_of_focus.dart';
+import 'package:training_app/widgets/homePage/boasting_figure_card.dart';
+import 'package:training_app/widgets/homePage/homepage_subtitle.dart';
+import 'package:training_app/widgets/homePage/homepage_title.dart';
+import 'package:training_app/widgets/homePage/next_workout_card.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
