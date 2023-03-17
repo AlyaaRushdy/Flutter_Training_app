@@ -22,7 +22,10 @@ class CircuitsInfoRow extends StatelessWidget {
           Icons.loop_rounded,
           color: AppColor.loopColor,
         ),
-        const Text(" 3 Sets  "),
+        const Text(
+          " 3 Sets  ",
+          style: TextStyle(color: AppColor.setsColor),
+        ),
       ],
     );
   }
