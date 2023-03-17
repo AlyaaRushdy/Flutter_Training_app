@@ -1,7 +1,6 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:training_app/assets/colors.dart';
+import 'package:training_app/widgets/secondPage/circuits_info_row.dart';
 import 'package:training_app/widgets/secondPage/secondPage_top.dart';
 
 class VideoInfo extends StatefulWidget {
@@ -30,20 +29,27 @@ class VideoInfoState extends State<VideoInfo> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SecondPageTop(),
-            Container(
-              margin: const EdgeInsets.only(top: 20),
-              width: MediaQuery.of(context).size.width,
-              height: 500,
-              decoration: const BoxDecoration(
-                color: AppColor.homePageBackground,
-                borderRadius: BorderRadius.only(
-                  topRight: Radius.circular(60),
+            Expanded(
+              child: Container(
+                margin: const EdgeInsets.only(top: 20),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 15,
+                  vertical: 25,
                 ),
-              ),
-              child: Column(
-                children: [
-                  Row(),
-                ],
+                decoration: const BoxDecoration(
+                  color: AppColor.homePageBackground,
+                  borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(60),
+                  ),
+                ),
+                child: Column(
+                  children: [
+                    CircuitsInfoRow(),
+                    ListView.builder(itemBuilder: (context, index)=> {
+                      
+                    })
+\                  ],
+                ),
               ),
             ),
           ],
