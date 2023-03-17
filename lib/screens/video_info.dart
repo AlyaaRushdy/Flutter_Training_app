@@ -1,7 +1,9 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:training_app/assets/colors.dart';
 import 'package:training_app/widgets/secondPage/circuits_info_row.dart';
-import 'package:training_app/widgets/secondPage/secondPage_top.dart';
+import 'package:training_app/widgets/secondPage/exercises_list.dart';
+import 'package:training_app/widgets/secondPage/second_page_top.dart';
 
 class VideoInfo extends StatefulWidget {
   const VideoInfo({super.key});
@@ -11,6 +13,23 @@ class VideoInfo extends StatefulWidget {
 }
 
 class VideoInfoState extends State<VideoInfo> {
+  List videoInfo = [];
+  _initData() {
+    DefaultAssetBundle.of(context).loadString("json/videoinfo.json").then(
+      (value) {
+        setState(() {
+          videoInfo = json.decode(value);
+        });
+      },
+    );
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _initData();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,11 +63,9 @@ class VideoInfoState extends State<VideoInfo> {
                 ),
                 child: Column(
                   children: [
-                    CircuitsInfoRow(),
-                    ListView.builder(itemBuilder: (context, index)=> {
-                      
-                    })
-\                  ],
+                    const CircuitsInfoRow(),
+                    ExercisesList(videoInfo: videoInfo)
+                  ],
                 ),
               ),
             ),
