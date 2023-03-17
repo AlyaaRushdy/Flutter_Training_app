@@ -7,7 +7,7 @@ class SecondPageTop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 20, right: 20, top: 45),
+      padding: const EdgeInsets.only(left: 15, right: 15, top: 45),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
@@ -30,7 +30,7 @@ class SecondPageTop extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(height: 35),
+          const SizedBox(height: 30),
           const Text(
             "Legs Toning",
             style: TextStyle(
